@@ -33,10 +33,10 @@ def filename_replace(filename):
 
 def get_runtime_msg(flag = ''):
     if flag == '':
-        msg = "[" + sys._getframe().f_code.co_filename + str(sys._getframe().f_lineno) + "] [DEBUG] "
+        msg = "[" + sys._getframe().f_back.f_code.co_filename + " " + str(sys._getframe().f_back.f_lineno) + "] [DEBUG] "
         return msg
     elif flag == 'error':
-        msg = "[" + sys._getframe().f_code.co_filename + str(sys._getframe().f_lineno) + "] [ERROR] "
+        msg = "[" + sys._getframe().f_back.f_code.co_filename + " " + str(sys._getframe().f_back.f_lineno) + "] [ERROR] "
         return msg
 
 def start(start_page ,pid_target):
